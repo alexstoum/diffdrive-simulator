@@ -20,7 +20,7 @@ jobs:
           pip install -e .[dev]
       - name: Lint
         run: |
-          ruff src
+          ruff check src
           black --check src
       - name: Tests
         run: |
