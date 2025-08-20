@@ -1,5 +1,7 @@
 from __future__ import annotations
+
 import matplotlib.pyplot as plt
+
 
 def plot_path_and_traj(path, states, save: str | None = None, show: bool = True):
     xs = [p[0] for p in path]

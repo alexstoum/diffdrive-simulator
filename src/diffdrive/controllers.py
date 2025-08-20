@@ -1,7 +1,9 @@
 from __future__ import annotations
+
 import math
 from dataclasses import dataclass
 from typing import List, Tuple
+
 
 @dataclass
 class PurePursuit:
@@ -36,7 +38,7 @@ class PurePursuit:
 
         dx = target[0] - state.x
         dy = target[1] - state.y
-        xt = math.cos(-state.theta) * dx - math.sin(-state.theta) * dy
+        _xt = math.cos(-state.theta) * dx - math.sin(-state.theta) * dy
         yt = math.sin(-state.theta) * dx + math.cos(-state.theta) * dy
 
         if Ld < 1e-6:

@@ -1,12 +1,14 @@
 from __future__ import annotations
+
 import argparse
 from typing import Tuple
 
-from .kinematics import Kinematics
-from .simulator import DiffDriveSimulator, RobotState, Limits, Action
 from .controllers import PurePursuit
-from .trajectories import circle_waypoints, line_waypoints, figure8_waypoints
+from .kinematics import Kinematics
 from .plotting import plot_path_and_traj
+from .simulator import Action, DiffDriveSimulator, Limits, RobotState
+from .trajectories import circle_waypoints, figure8_waypoints, line_waypoints
+
 
 def parse_pair(s: str) -> Tuple[float, float]:
     x, y = s.split(",")
@@ -35,7 +37,8 @@ def main() -> None:
         args.end = parse_pair(args.end)
 
     kin = Kinematics(wheel_radius=0.05, wheel_base=0.3)
-    sim = DiffDriveSimulator(kin, state=RobotState(-args.radius, 0.0, 0.0), limits=Limits(max_v=1.0, max_omega=3.0), integrator=args.integrator)
+    sim = DiffDriveSimulator(kin, state=RobotState(-args.radius, 0.0, 0.0),
+limits=Limits(max_v=1.0, max_omega=3.0), integrator=args.integrator)
 
     if args.path == "circle":
         path = circle_waypoints(args.radius, num_points=300)
