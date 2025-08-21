@@ -36,22 +36,18 @@ diffdrive-simulator/
 
 ## 🧠 Equations (Kinematics)
 
-Let the left and right **wheel linear velocities** be v_l, v_r (m/s). Let the **wheel base** (distance between wheels)
-be L, and the robot **pose** be x, y, theta.
+Let the left and right wheel linear velocities be `v_l` and `v_r` (in m/s). The wheel base (the distance between the wheels) is `L`. The robot's pose is given by its x-position, y-position, and orientation angle `theta`.
 
-Body-frame velocities:
-v = frac{v_r + v_l}{2}, \qquad \omega = \frac{v_r - v_l}{L}
+The body-frame linear and angular velocities are calculated as:
+- Linear velocity, `v` = (v_r + v_l) / 2
+- Angular velocity, `omega` = (v_r - v_l) / L
 
+The robot's dynamics follow the unicycle model:
+- dx/dt = v * cos(theta)
+- dy/dt = v * sin(theta)
+- d(theta)/dt = omega
 
-Dynamics (unicycle model):
-\[
-\dot{x} = v \cos\theta,\quad
-\dot{y} = v \sin\theta,\quad
-\dot{\theta} = \omega
-\]
-
-We integrate using **Euler** or **RK4**. Angle \(\theta\) is wrapped to \([-\pi,\pi)\).
-
+These dynamics are integrated over time using a numerical method like Euler or Runge-Kutta 4 (RK4). The robot's orientation angle `theta` is kept within the range [-pi, pi).
 ---
 
 ## ✅ Quickstart
