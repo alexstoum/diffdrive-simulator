@@ -2,16 +2,7 @@
 
 A clean, **from-scratch** 2D simulator for a differential-drive robot, written in Python with NumPy & Matplotlib.
 Includes a simple **Pure Pursuit** controller for path following (circle/line/figure-8), a CLI, and ready-to-use
-**documentation structure**, **Dockerfile**, **tests**, and **CI**.
-
----
-
-## 🎯 Project Goals
-- Implement differential-drive kinematics and simulation (Euler & RK4).
-- Follow paths using a Pure Pursuit controller.
-- Produce clear plots of path vs. executed trajectory.
-- Be easy to run via CLI and easy to extend.
-- Be a **portfolio-quality** repo with documentation, tests, CI, and Docker.
+**documentation structure**, **tests**, and **CI**.
 
 ---
 
@@ -45,13 +36,12 @@ diffdrive-simulator/
 
 ## 🧠 Equations (Kinematics)
 
-Let the left and right **wheel linear velocities** be \(v_l, v_r\) (m/s). Let the **wheel base** (distance between wheels)
-be \(L\), and the robot **pose** be \((x, y, \theta)\).
+Let the left and right **wheel linear velocities** be v_l, v_r (m/s). Let the **wheel base** (distance between wheels)
+be L, and the robot **pose** be x, y, theta.
 
 Body-frame velocities:
-\[
-v = \frac{v_r + v_l}{2}, \qquad \omega = \frac{v_r - v_l}{L}
-\]
+v = frac{v_r + v_l}{2}, \qquad \omega = \frac{v_r - v_l}{L}
+
 
 Dynamics (unicycle model):
 \[
