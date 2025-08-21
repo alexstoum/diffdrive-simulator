@@ -36,7 +36,7 @@ diffdrive-simulator/
 
 ## 🧠 Equations (Kinematics)
 
-Let the left and right wheel linear velocities be `v_l` and `v_r` (in m/s). The wheel base (the distance between the wheels) is `L`. The robot's pose is given by its x-position, y-position, and orientation angle `theta`.
+The left and right wheel linear velocities are `v_l` and `v_r` (in m/s). The wheel base (the distance between the wheels) is `L`. The robot's pose is given by its x-position, y-position, and orientation angle `theta`.
 
 The body-frame linear and angular velocities are calculated as:
 - Linear velocity, `v` = (v_r + v_l) / 2
