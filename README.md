@@ -1,4 +1,4 @@
-# Differential Drive Simulator (from scratch)
+# Differential Drive Simulator
 
 A clean, **from-scratch** 2D simulator for a differential-drive robot, written in Python with NumPy & Matplotlib.
 Includes a simple **Pure Pursuit** controller for path following (circle/line/figure-8), a CLI, and ready-to-use
