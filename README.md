@@ -48,6 +48,7 @@ The robot's dynamics follow the unicycle model:
 - d(theta)/dt = omega
 
 These dynamics are integrated over time using a numerical method like Euler or Runge-Kutta 4 (RK4). The robot's orientation angle `theta` is kept within the range [-pi, pi).
+
 ---
 
 ## ✅ Quickstart
